@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <div class="container" id="book-container"></div>
+
+
+    <dialog>
+
+        <button autofocus>Close</button>
+
+        <form>
+
+
+            <fieldset>
+
+                <legend>Select your book</legend>
+
+
+                <div>
+                    <label for="title">Title </label>
+                    <input type="text" id="title" name="title">
+
+                </div>
+
+                <div>
+                    <label for="author">Author</label>
+                    <input type="text" id="author" name="author">
+
+                </div>
+
+                <div>
+                    <label for="pages">Pages</label>
+                    <input type="number" id="pages" name="pages">
+
+                </div>
+
+                <div>
+                    <label for="complete "> Read</label>
+                    <input type="radio" id="complete " name="complete" value="read">
+
+                    <label for="complete">Not yet read</label>
+                    <input type="radio" id="complete" name="complete" value="notread">
+                </div>
+
+            </fieldset>
+
+            <div class="submit-btn">
+                <button type="submit" id="submit-btn">Submit</button>
+            </div>
+        </form>
+
+
+    </dialog>
+
+    <button id="new-book">New Book</button>
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
