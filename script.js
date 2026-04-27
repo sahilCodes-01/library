@@ -8,11 +8,12 @@ function submitclick(event) {
   const title = document.querySelector("#title").value;
   const author = document.querySelector("#author").value;
   const pages = document.querySelector("#pages").value;
-  const read = document.querySelector("#complete").value;
+  const read =
+    document.querySelector("[name = 'complete']:checked").value === "read";
 
   addBookToLibrary(title, author, pages, read);
-  addBookToDisplay()
-  dialog.close()
+  addBookToDisplay();
+  dialog.close();
 }
 
 const myLibrary = [];
@@ -26,7 +27,7 @@ function Book(title, author, pages, read) {
   this.id = crypto.randomUUID();
 
   this.info = function () {
-    return `${this.title} by ${this.author} ${this.pages} ${this.read ? "read" : "not read yet"}`;
+    return `${this.title} by ${this.author} ${this.pages} ${this.read ? "Read" : "Not read yet"}`;
   };
 }
 
@@ -45,6 +46,21 @@ function addBookToDisplay() {
     container.appendChild(div);
 
     div.textContent = book.info();
+
+    //div for remove button
+    const removebtn = document.createElement("button");
+    removebtn.textContent = "Remove";
+    div.appendChild(removebtn);
+
+    //eventlistner to find the id for the book
+    // and remove it using splice
+
+    removebtn.addEventListener("click", () => {
+      const id = div.dataset.id;
+      const index = myLibrary.findIndex((book) => book.id === id);
+      myLibrary.splice(index, 1);
+      addBookToDisplay();
+    });
   }
 }
 
