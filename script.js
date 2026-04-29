@@ -31,6 +31,11 @@ function Book(title, author, pages, read) {
   };
 }
 
+//Constructor prototype
+Book.prototype.toggleRead = function () {
+  this.read = !this.read;
+};
+
 function addBookToLibrary(title, author, pages, read) {
   // take params, create a book then store it in the array
   let book = new Book(title, author, pages, read);
@@ -41,14 +46,18 @@ const container = document.querySelector("#book-container");
 
 function addBookToDisplay() {
   container.textContent = "";
+  //loop start from here
   for (const book of myLibrary) {
     const div = document.createElement("Div");
+    div.classList.add("card-div");
+    div.dataset.id = book.id;
     container.appendChild(div);
 
     div.textContent = book.info();
 
     //div for remove button
     const removebtn = document.createElement("button");
+    removebtn.classList.add("removebtn");
     removebtn.textContent = "Remove";
     div.appendChild(removebtn);
 
@@ -59,6 +68,20 @@ function addBookToDisplay() {
       const id = div.dataset.id;
       const index = myLibrary.findIndex((book) => book.id === id);
       myLibrary.splice(index, 1);
+      addBookToDisplay();
+    });
+
+    //toggle button for read status
+    const togglebtn = document.createElement("button");
+    togglebtn.classList.add("togglebtn");
+
+    togglebtn.textContent = "Toggle Read";
+    div.appendChild(togglebtn);
+
+    togglebtn.addEventListener("click", () => {
+      const id = div.dataset.id;
+      const index = myLibrary.findIndex((book) => book.id === id);
+      myLibrary[index].toggleRead();
       addBookToDisplay();
     });
   }
