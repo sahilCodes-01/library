@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#new-book {
+  background-color: rgb(43, 179, 241);
+  height: 2rem;
+  width: 7rem;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  position: relative;
+  top: 40px;
+  left: 20px;
+}
+
+.dialog {
+  position: relative;
+  top: 50px;
+  left: 70%;
+  height: 49%;
+  width: 25%;
+  background-color: #32e5f5d1;
+  border: none;
+  border-radius: 6px;
+}
+
+fieldset {
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  row-gap: 15px;
+  border: none;
+  padding: 12px;
+}
+
+#close ,
+form .submit-btn button{
+  border: none;
+  background: rgb(43, 179, 241);
+  color: white;
+  font-size: 13px;
+  width: 5rem;
+  height: 2rem;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 10px 0 10px 10px;
+  cursor: pointer;
+}
+
+fieldset input:not([type="radio"]) {
+  height: 1.5rem;
+  width: 200px;
+  border-radius: 4px;
+  border: none;
+}
+
+fieldset .label-1 {
+  margin-right: 25px;
+}
+
+fieldset .label-2 {
+  margin-right: 10px;
+}
+fieldset .label-3 {
+  margin-right: 19px;
+}
+
+fieldset div input[type="radio"] {
+  cursor: pointer;
+  margin: 6px 8px 6px 8px;
+}
+
+.submit-btn{
+  margin-top: -30px;
+}
+
+fieldset input:focus{
+outline:1px solid blue;
+
+}
