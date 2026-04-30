@@ -53,13 +53,16 @@ function addBookToDisplay() {
     div.dataset.id = book.id;
     container.appendChild(div);
 
-    div.textContent = book.info();
+    div.innerHTML = `
+    <p class="style-title" >${book.title}</p>
+    <p class="style-author" >${book.author}</p>
+    <p class="style-pages" >${book.pages}</p>
+    <p class="complete" >${book.read ? "Read" : "Not read yet"}</p>  `;
 
     //div for remove button
     const removebtn = document.createElement("button");
     removebtn.classList.add("removebtn");
     removebtn.textContent = "Remove";
-    div.appendChild(removebtn);
 
     //eventlistner to find the id for the book
     // and remove it using splice
@@ -74,9 +77,13 @@ function addBookToDisplay() {
     //toggle button for read status
     const togglebtn = document.createElement("button");
     togglebtn.classList.add("togglebtn");
+    togglebtn.textContent = "Read";
 
-    togglebtn.textContent = "Toggle Read";
-    div.appendChild(togglebtn);
+    const btnContainer = document.createElement("div");
+    btnContainer.classList.add("btn-container");
+    btnContainer.appendChild(removebtn);
+    btnContainer.appendChild(togglebtn);
+    div.appendChild(btnContainer);
 
     togglebtn.addEventListener("click", () => {
       const id = div.dataset.id;

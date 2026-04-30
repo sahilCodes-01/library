@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: rgb(204, 183, 183);
+}
+
 #new-book {
   background-color: rgb(43, 179, 241);
   height: 2rem;
@@ -11,7 +15,7 @@
   color: white;
   border: none;
   border-radius: 8px;
-  position: relative;
+  position: absolute;
   top: 40px;
   left: 20px;
 }
@@ -35,8 +39,8 @@ fieldset {
   padding: 12px;
 }
 
-#close ,
-form .submit-btn button{
+#close,
+form .submit-btn button {
   border: none;
   background: rgb(43, 179, 241);
   color: white;
@@ -72,11 +76,89 @@ fieldset div input[type="radio"] {
   margin: 6px 8px 6px 8px;
 }
 
-.submit-btn{
+.submit-btn {
   margin-top: -30px;
 }
 
-fieldset input:focus{
-outline:1px solid blue;
+fieldset input:focus {
+  outline: 1px solid blue;
+}
 
+.card-div {
+  background-color: rgba(107, 236, 219, 0.822);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 255px;
+  justify-content: space-between;
+  height: 40vh;
+  margin-left: 10px;
+  border-radius: 8px;
+}
+
+.container {
+  position: relative;
+  top: 182px;
+  left: 54px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100vw;
+}
+
+.btn-container {
+  display: flex;
+  gap: 33px;
+  margin-bottom: 10px;
+  margin-left: 26px;
+}
+
+.removebtn {
+  width: 80px;
+  height: 29px;
+  border: none;
+  background: rgb(43, 179, 241);
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.togglebtn {
+  width: 80px;
+  height: 29px;
+  border: none;
+  background: rgb(43, 179, 241);
+  color: white;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.style-title {
+  padding: 13px;
+  font-size: 15px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.style-author {
+  padding: 0 0 13px 13px;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.style-pages {
+  padding: 0 0 13px 13px;
+  font-size: 16px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.complete {
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #467b7b;
+  width: 103px;
+  height: 34px;
+  padding: 7px;
+  margin-left: 7px;
+  color: #ffffff;
 }
